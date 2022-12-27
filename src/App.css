@@ -1,38 +1,62 @@
-.App {
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+ }
+ .searchfield{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ }
+ form{
+  margin-top: 10px;
+ }
+ form input{
+  width: 300px;
+  padding: 5px;
+ }
+ form button{
+  margin-left: 5px;
+  padding: 5px;
+ }
+ .imagedisplay{
+  margin-top: 20px;
+  margin-left: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  flex-wrap: wrap;
+  width: 100vw;
+  grid-template-rows: auto;
+ }
+ .image00{
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  width: 400px;
+  height:375px;
+  margin: 5px;
+  box-shadow: 2px 2px 5px;
+  align-items: center;
+ }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .image00 .coverphoto img {
+  border-radius: 5px;
+  image-resolution: normal;
+  width: 400px;
+  height: 300px;
+  align-items: center;
+  background-size: cover;
+ }
+ .userpro{
+  border-radius: 50%;
+ }
+ .user{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+ .likes00{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
