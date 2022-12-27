@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   const [image,setimage] = useState([]);
-  let api01="https://api.unsplash.com/search/collections?page=1&query=";
+  let api01="https://api.unsplash.com/search/collections?page=1&per_page=25&orientation=squarish&query=";
   const [keyword,setkeyword]=useState('');
   let api02="&client_id=dVso0OdCflrQXO9sq9wp5FtmYBltKMqpm6CZziE3sPM";
   
