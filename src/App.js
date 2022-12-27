@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       <div className='searchfield'>
       <h2>Unsplash Image Search </h2>
-      <form onSubmit="">
+      <form onSubmit={getImage}>
 
       <input type="text" placeholder="Enter the keyword" value={keyword} onChange={changehandler}/>
       <button onClick={getImage} type="button">Search</button>
