@@ -1,5 +1,6 @@
 LINK FOR THE PROJECT:https://unsplash-image-search-omega.vercel.app/
 
+deployed in vercel
 
 # Getting Started with Create React App
 
