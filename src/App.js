@@ -5,26 +5,31 @@ import './App.css';
 function App() {
   const [image,setimage] = useState([]);
   const [page,setpage] = useState(1);
+  const [keyword,setkeyword]=useState('fo');
 
   const hello=(page,keyword)=>{
-    return `https://api.unsplash.com/search/collections?page=${page}1&per_page=15&orientation=squarish&query=${keyword}&client_id=dVso0OdCflrQXO9sq9wp5FtmYBltKMqpm6CZziE3sPM`
+    return `https://api.unsplash.com/search/collections?page=${page}1&per_page=15&orientation=squarish&query=${keyword}&client_id=dVso0OdCflrQXO9sq9wp5FtmYBltKMqpm6CZziE3sPM`;
   }
   // const api01="https://api.unsplash.com/search/collections?page="+{page}+"1&per_page=15&orientation=squarish&query=";
-  const [keyword,setkeyword]=useState('');
   // const api02="&client_id=dVso0OdCflrQXO9sq9wp5FtmYBltKMqpm6CZziE3sPM";
   
   const getImage=()=>{
-    axios.get(hello(page, keyword))
+    axios.get(hello(page,keyword))
     .then((response)=>{
       setimage(response.data.results);
     })
+   
   }
-
   useEffect(()=>{
     getImage();
-  })
+  },[page])
 
-  const changehandler=(e)=>{
+  // const changehandler=(e)=>{
+  //   e.preventDefault();
+  //   setkeyword(e.target.value);
+  // }
+
+  const handleChange=(e)=>{
     e.preventDefault();
     setkeyword(e.target.value);
   }
@@ -32,22 +37,23 @@ function App() {
     if(page>1)
     {
       setpage(page-1);
-      getImage();
+      // changehandler();
     }
   }
   const nextpage=()=>{
     setpage(page+1);
-    getImage();
+    // changehandler();
   }
-  return (
+ 
+  
+return (
     <div className="App">
       <div className='searchfield'>
       <h2>Unsplash Image Search </h2>
-      <form onSubmit={getImage}>
-
-      <input type="text" placeholder="Enter the keyword" value={keyword} onChange={changehandler}/>
+      <div className="form" onSubmit={getImage}>
+      <input type="text" placeholder="Enter the keyword" value={keyword} onChange={handleChange} className="inputt"/>
       <button onClick={getImage} type="button">Search</button>
-      </form>
+      </div>
       </div>
       
       <div className='imagedisplay'>
@@ -63,7 +69,6 @@ function App() {
                   <img src={value.user.profile_image.medium} className="userpro" alt='userlogo'/>
                   <div className='likes00'>{value.user.total_likes}<img src='like.png' alt='likes'/></div>
                   <div className='name'>{value.user.username}</div>
-                  <a href={value.cover_photo.urls.small} download><button>Download</button></a>
                 </div>
               </div>
             )

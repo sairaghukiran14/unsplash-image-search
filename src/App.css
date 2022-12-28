@@ -8,14 +8,14 @@
  .searchfield{
   text-align: center;
  }
- form{
+ .form{
   margin-top: 10px;
  }
- form input{
+ .form input{
   width: 300px;
   padding: 5px;
  }
- form button{
+ .form button{
   margin-left: 5px;
   padding: 5px;
  }
@@ -79,4 +79,7 @@ a button{
 }
 a button:hover{
     background-color: rgb(16, 143, 18);
+}
+.inputt{
+    padding: 5px;
 }
